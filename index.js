@@ -27,6 +27,7 @@ bot.on('message', msg => {
               msg.channel.send(embed);
       }).catch(err => {
         msg.channel.send("Bork bork! Nah. Blame Google");
+        console.log(err);
       });
     }
   });
