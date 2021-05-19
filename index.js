@@ -5,12 +5,13 @@ const bot = new Discord.Client();
 
 const TOKEN = process.env.TOKEN;
 const KEY = process.env.KEY;
+const DOG = process.env.DOG;
 
 bot.login(TOKEN);
 
 bot.on('ready', () => {
     console.info(`Logged in as ${bot.user.tag}!`);
-    bot.user.setActivity(`Why are we here, just to suffer?`, {type: 2}).then(res => {
+    bot.user.setActivity(`the sound of your eternal suffering.`, {type: 2}).then(res => {
       console.log(res);
     }, err => {
       console.log(err);
@@ -25,7 +26,7 @@ bot.on('message', msg => {
     }
     if (text.includes('fetch')) {
 
-      axios.get(`https://sheets.googleapis.com/v4/spreadsheets/1cWbL5jW5QyGfssRjV1GRVd5LDTEvQ178wLHpSAhhoz0/values/Sheet1!A:A?key=${KEY}`).then(resp => {
+      axios.get(`https://sheets.googleapis.com/v4/spreadsheets/1cWbL5jW5QyGfssRjV1GRVd5LDTEvQ178wLHpSAhhoz0/values/${DOG}!A:A?key=${KEY}`).then(resp => {
               const photos = resp.data.values;
 
               let imgLink = photos[Math.floor(Math.random() * photos.length)][0];
