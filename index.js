@@ -21,7 +21,7 @@ bot.on('ready', () => {
 
 bot.on('message', msg => {
     let text = msg.content.toLowerCase();
-    if (text.includes('ripley') || text.includes('@ripley')) {
+    if (text.includes(''+DOG) || text.includes('@'+DOG)) {
       msg.reply('Bork bork!');
     }
     if (text.includes('fetch')) {
